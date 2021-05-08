@@ -1,0 +1,50 @@
+﻿{
+  "REQUEST": {
+    "BATCHHEADER": {
+      "DateOfTransmission": "2021-01-31T11:00:00",
+      "DateOfTransaction": "2020-10-29",
+      "NumberOfLastInvoiceSent": "3450021950000000047",
+      "PINOfSupplier": "P051352967J",
+      "MiddlewareSerialNumber": "KRAMW345202001002195",
+      "NumberOfInvoiceRecords": "1"
+    },
+    "BATCHDETAILS": {
+      "INVOICE": [
+        {
+          "TraderSystemInvoiceNumber": "75",
+          "MiddlewareInvoiceNumber": "3450021950000000048",
+          "RelevantInvoiceNumber": "",
+          "InvoiceDate": "2020-10-29T09:00:00",
+          "PINOfBuyer": "P051695676B",
+          "Discount": "0",
+          "InvoiceType": "Original",
+          "InvoiceCategory": "Tax Invoice",
+          "TotalInvoiceAmount": "264.60",
+          "TotalTaxableAmount": "245.00",
+          "TotalTaxAmount": "19.60",
+          "ExemptionNumber": "",
+          "QRCode": "1234567890",
+          "ItemDetails": [
+
+            {
+              "HSCode": "0114.13.00",
+              "Category": "Taxable",
+              "HSDesc": " Natural gas in gaseous state",
+              "Quantity": "7",
+              "UnitPrice": "35.00",
+              "ItemAmount": "245.00",
+              "TaxRate": "8",
+              "TaxAmount": "19.60"
+
+            }            
+
+          ]
+
+        }
+      ]
+    }
+
+  }
+}
+
+	
