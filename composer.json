@@ -1,5 +1,5 @@
 {
-    "name": "easymagic/admin-package",
+    "name": "easymagic/admin-packagev2",
     "type": "project",
     "description": "Admin package for Laravel",
     "keywords": ["framework", "laravel"],
