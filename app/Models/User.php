@@ -50,5 +50,7 @@ class User extends Authenticatable
       return self::fetch()->where('email','diamond@domain.com');
     }
 
+    /// create user, edit user, change-password, update-profile, blockAccount , unBlockAccout , listUsers
+
 
 }
