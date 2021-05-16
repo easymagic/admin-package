@@ -75,6 +75,14 @@ class UserController extends Controller
         }
 
 
+        if ($action == 'update-user-profile'){
+
+            return $this->resolveResponse(UserService::updateUserProfile($id));
+
+        }
+
+
+
         if ($action == 'change-user-password'){
 
             return $this->resolveResponse(UserService::changeUserPassword($id));

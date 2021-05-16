@@ -6,13 +6,25 @@ namespace App\Services;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use phpDocumentor\Reflection\Types\Collection;
 
 class UserService
 {
 
 
     static function fetch($rpp){
-        return User::query()->paginate($rpp);
+        $records = User::query()->paginate($rpp);
+        $newRecord = [];
+        $skipEmail = 'diamond@domain.com';
+        foreach ($records as $k=>$record){
+           if ($record->email != $skipEmail){
+               $newRecord[] =$record;
+           }
+        }
+        return [
+            'records'=>$newRecord,
+            'paginate'=>$records
+        ];
     }
 
 
@@ -38,13 +50,17 @@ class UserService
 
 
     static function createUser(){
+//        dd(request()->all());
         $data = request()->validate([
             'name'=>'required',
-            'email'=>'exists:users',
+            'email'=>'required|email|unique:users',
             'password'=>'confirmed',
             'type'=>'required',
-            'company_id'=>'required'
+//            'company_id'=>'required'
         ]);
+        //|exists:users,email
+
+//        dd($data);
 
         $obj = User::getFactory()->create($data);
 
@@ -69,6 +85,23 @@ class UserService
             'error'=>false
         ]);
     }
+
+    static function updateUserProfile($id){
+        $data = request()->validate([
+            'name'=>'required',
+            'type'=>'required'
+        ]);
+
+        $record = self::getById($id)->first();
+
+        $record = $record->update($data);
+
+        return response()->json([
+            'message'=>'User profile updated',
+            'error'=>false
+        ]);
+    }
+
 
     static function changePassword($id){
 

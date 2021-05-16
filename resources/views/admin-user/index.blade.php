@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="col-lg-10 post-list" style="@yield('main-center-style','margin-left: 1%;');">
+    <div class="col-lg-12 post-list" style="@yield('main-center-style','margin-left: 1%;');">
 
         <div class="container">
             <div class="row justify-content-center">
@@ -23,10 +23,11 @@
 
                     @include('admin-user.create')
 
-                    @foreach ($users as $item)
+                    @foreach ($users['records'] as $item)
 
 
-                        @include('admin-user.edit')
+                        @include('admin-user.user-edit')
+                        @include('admin-user.user-change-password')
 
 
                     @endforeach
@@ -54,7 +55,7 @@
                                 Actions
                             </th>
                         </tr>
-                        @foreach ($users as $item)
+                        @foreach ($users['records'] as $item)
 
 
                             <tr>
@@ -83,18 +84,49 @@
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(-5px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
 
 
-                                            <a  type="button" data-toggle="modal" style="margin-bottom: 11px;" data-target="#edit{{ $item->id }}" class="dropdown-item" data-backdrop="false">Modify</a>
+                                            <a  type="button" data-toggle="modal" style="margin-bottom: 11px;" data-target="#user-edit{{ $item->id }}" class="dropdown-item" data-backdrop="false">Modify</a>
 
-                                            <form method="post" onsubmit="return confirm('Do you want to confirm this action?')" action="{{ route('workflow.destroy',$item->id) }}">
+
+                                            <a  type="button" data-toggle="modal" style="margin-bottom: 11px;" data-target="#user-change-password{{ $item->id }}" class="dropdown-item" data-backdrop="false">Change Password</a>
+
+
+
+                                            <form method="post" onsubmit="return confirm('Do you want to confirm this action?')" action="{{ route('user.update',$item->id) }}">
+
+                                                @csrf
+                                                @method('PUT')
+
+                                                <input type="hidden" name="action" value="block" />
+
+
+                                                <button type="submit" class="mb-1 dropdown-item btn btn-warning btn-sm" data-backdrop="false"  data-toggle="modal" data-target="#approveReject" >Block</button>
+
+                                            </form>
+
+
+
+                                            <form method="post" onsubmit="return confirm('Do you want to confirm this action?')" action="{{ route('user.update',$item->id) }}">
+
+                                                @csrf
+                                                @method('PUT')
+
+                                                <input type="hidden" name="action" value="unblock" />
+
+                                                <button type="submit" class="mb-1 dropdown-item btn btn-primary btn-sm" data-backdrop="false"  data-toggle="modal" data-target="#approveReject" >Unblock</button>
+
+                                            </form>
+
+
+
+                                            <form method="post" onsubmit="return confirm('Do you want to confirm this action?')" action="{{ route('user.destroy',$item->id) }}">
 
                                                 @csrf
                                                 @method('DELETE')
 
-                                                <button type="submit" class="dropdown-item btn btn-danger btn-sm" data-backdrop="false"  data-toggle="modal" data-target="#approveReject" >Remove</button>
+                                                <button type="submit" class="mb-1 dropdown-item btn btn-danger btn-sm" data-backdrop="false"  data-toggle="modal" data-target="#approveReject" >Remove</button>
 
                                             </form>
 
-                                            <a style="margin-bottom: 11px;" href="{{ route('workflow-stages.index') }}?workflow_id={{ $item->id }}" target="_blank" class="dropdown-item">Stages</a>
 
                                         </div>
                                     </div>
@@ -103,6 +135,8 @@
 
                         @endforeach
                     </table>
+
+                    {{ $users['paginate']->links() }}
 
 
 
