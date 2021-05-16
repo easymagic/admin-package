@@ -1,6 +1,6 @@
 {
     "name": "easymagic/admin-packagev2",
-    "type": "project",
+    "type": "library",
     "description": "Admin package for Laravel",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
