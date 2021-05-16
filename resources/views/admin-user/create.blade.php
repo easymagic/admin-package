@@ -1,5 +1,5 @@
 <!-- Modal -->
-<form method="POST" action="{{ route('workflow.store') }}">
+<form method="POST" action="{{ route('user.store') }}">
 <div id="create" class="modal fade" role="dialog">
     <div class="modal-dialog">
 

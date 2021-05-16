@@ -41,7 +41,7 @@ class SysReset extends Command
     {
         $this->recreateTables();
         $this->setupDefaultSystemUser();
-        $this->loadDefaultDeviceJson();
+//        $this->loadDefaultDeviceJson();
         return 0;
     }
 

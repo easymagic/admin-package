@@ -47,112 +47,17 @@ class User extends Authenticatable
     ];
 
 
-    static function getSystemAdmin(){
-      return self::fetch()->where('email','diamond@domain.com');
-    }
-
-    /// create user, edit user, change-password, update-profile, blockAccount , unBlockAccout , listUsers
-    ///
-
-
-    static function getByEmail($email){
-        $query = User::query()->where('email',$email);
-        return $query;
-    }
-
-    static function getById($id){
-        $query = User::query()->where('id',$id);
-        return $query;
-    }
-
-
-
-
-    static function createUser(){
-        $data = request()->validate([
-            'name'=>'required',
-            'email'=>'exists:users',
-            'password'=>'confirmed',
-            'type'=>'required',
-            'company_id'=>'required'
-        ]);
-
-       $obj = User::getFactory()->create($data);
-
-       return response()->json([
-           'message'=>'New user added.',
-           'error'=>false
-       ]);
-    }
-
-
-    static function updateProfile($id){
-        $data = request()->validate([
-            'name'=>'required'
-        ]);
-
-        $record = self::getById($id)->first();
-
-        $record = $record->update($data);
-
-        return response()->json([
-            'message'=>'Profile updated',
-            'error'=>false
-        ]);
-    }
-
-
-    static function changePassword($id){
-
-        $data = request()->validate([
-            'old_password'=>'required',
-            'password'=>'confirmed'
-        ]);
-
-        $record = self::getById($id)->first();
-        $hashedPassword = $record->password;
-
-        if (!Hash::check($data['old_password'],$hashedPassword)){
-            return response()->json([
-                'message'=>'Old password does not match!',
-                'error'=>true
-            ]);
+    function getStatusNameAttribute(){
+        $status = $this->status;
+        if ($status == 0){
+            return 'Blocked';
         }
-
-        $record->update([
-            'password'=>Hash::make($data['password'])
-        ]);
-
-
-        return response()->json([
-            'message'=>'Password changed successfully.',
-            'error'=>false
-        ]);
-
+        return 'Un-Blocked';
     }
 
 
-    static function changeUserPassword($id){
-
-        $data = request()->validate([
-            'password'=>'confirmed'
-        ]);
-
-        $record = self::getById($id)->first();
-//        $hashedPassword = $record->password;
 
 
-        $record->update([
-            'password'=>Hash::make($data['password'])
-        ]);
-
-
-        return response()->json([
-            'message'=>'User password changed successfully.',
-            'error'=>false
-        ]);
-
-    }
 
 
 }

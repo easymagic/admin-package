@@ -1,4 +1,9 @@
-@extends('layouts.main')
+@extends('layouts.admin-layoutv2')
+
+@section('title')
+  Manage Users
+@endsection
+
 
 @section('content')
 
@@ -13,43 +18,60 @@
     margin-bottom: 17px;
     font-size: 18px;
 ">
-                        Workflows
+                        Users
                     </div>
 
-                    @include('workflow.create')
+                    @include('admin-user.create')
 
-                    @foreach ($workflows as $item)
+                    @foreach ($users as $item)
 
 
-                        @include('workflow.edit')
+                        @include('admin-user.edit')
 
 
                     @endforeach
 
 
                     <div class="col-md-12" align="right">
-                        <a style="margin-bottom: 11px;" href="{{ route('workflow-stages.index') }}" class="btn btn-sm btn-info">
-                            Workflow-Stages
-                        </a>
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" style="margin-bottom: 11px;" data-target="#create">Add Workflow</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" style="margin-bottom: 11px;" data-target="#create">Add User</button>
                     </div>
 
                     <table class="table table-striped">
                         <tr>
                             <th>
-                                Workflow-Name
+                                Name
+                            </th>
+                            <th>
+                                E-mail
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Status
                             </th>
                             <th>
                                 Actions
                             </th>
                         </tr>
-                        @foreach ($workflows as $item)
+                        @foreach ($users as $item)
 
 
                             <tr>
 
                                 <td>
                                     {{ $item->name }}
+                                </td>
+                                <td>
+                                    {{ $item->email }}
+                                </td>
+
+                                <td>
+                                    {{ $item->type }}
+                                </td>
+
+                                <td>
+                                    {{ $item->status_name }}
                                 </td>
 
                                 <td>
@@ -93,5 +115,5 @@
 
     </div>
 
-
 @endsection
+
