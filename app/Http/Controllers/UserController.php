@@ -116,8 +116,19 @@ class UserController extends Controller
         ]));
     }
 
+    function loadStats(){
+
+        $this->data['users_count'] = UserService::fetchQuery()->count();
+        $this->data['staff_count'] = UserService::fetchStaffs()->count();
+        $this->data['admin_count'] = UserService::fetchAdmin()->count();
+        $this->data['blocked_count'] = UserService::fetchBlocked()->count();
+
+    }
+
 
     function dashboard(){
+
+        $this->loadStats();
 
         return view('admin-user.dashboard',$this->data);
     }

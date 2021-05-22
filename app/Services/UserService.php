@@ -11,6 +11,22 @@ use phpDocumentor\Reflection\Types\Collection;
 class UserService
 {
 
+    static function fetchQuery(){
+        $query = User::query();
+        return $query;
+    }
+
+    static function fetchStaffs(){
+        return self::fetchQuery()->where('type','staff');
+    }
+
+    static function fetchAdmin(){
+        return self::fetchQuery()->where('type','admin');
+    }
+
+    static function fetchBlocked(){
+        return self::fetchQuery()->where('status',0);
+    }
 
     static function fetch($rpp){
         $records = User::query()->paginate($rpp);
