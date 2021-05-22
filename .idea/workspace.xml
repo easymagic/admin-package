@@ -2,15 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06d15d99-88a8-4ef4-a627-42ac3f71fe39" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin-user/user-change-password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin-user/user-edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/CompanyService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin-user/dashboard.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/company/change-other-password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/company/change-password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/company/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/company/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/company/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/company/user-change-password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/company/user-edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminPackageController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BatchController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BranchController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceItemController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Batch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Branch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Device.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Invoice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/InvoiceItem.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AdminPackageProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AdminPackageProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/DeviceService.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/UserService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin-user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin-user/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin-user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin-user/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin-user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin-user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-layoutv2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-layoutv2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/BatchFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/BranchFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CompanyFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/DeviceFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/InvoiceItemFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/BatchSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/BranchSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/CompanySeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DeviceSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/InvoiceItemSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/InvoiceSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/left.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +219,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620462360860</updated>
       <workItem from="1620462365043" duration="6622000" />
-      <workItem from="1620491279669" duration="11003000" />
+      <workItem from="1620491279669" duration="14954000" />
     </task>
     <servers />
   </component>

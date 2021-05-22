@@ -110,6 +110,8 @@ class UserService
             'password'=>'confirmed'
         ]);
 
+//        dd($data);
+
         $record = self::getById($id)->first();
         $hashedPassword = $record->password;
 
@@ -135,12 +137,13 @@ class UserService
 
     static function changeUserPassword($id){
 
+        //password
         $data = request()->validate([
-            'password'=>'confirmed'
+            'password'=>'confirmed|min:6'
         ]);
 
+
         $record = self::getById($id)->first();
-//        $hashedPassword = $record->password;
 
 
         $record->update([

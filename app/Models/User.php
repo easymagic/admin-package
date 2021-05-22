@@ -55,6 +55,10 @@ class User extends Authenticatable
         return 'Un-Blocked';
     }
 
+    function company(){
+        return $this->belongsTo(Company::class,'company_id');
+    }
+
 
 
 

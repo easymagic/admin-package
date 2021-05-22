@@ -110,5 +110,17 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        return $this->resolveResponse(response()->json([
+            'message'=>'This feature is not available!',
+            'error'=>true
+        ]));
     }
+
+
+    function dashboard(){
+
+        return view('admin-user.dashboard',$this->data);
+    }
+
+
 }

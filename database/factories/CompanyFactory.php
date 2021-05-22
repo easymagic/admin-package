@@ -23,8 +23,6 @@ class CompanyFactory extends Factory
     {
         return [
             //
-            'name'=>'Diamond',
-            'user_id'=>1
         ];
     }
 }
