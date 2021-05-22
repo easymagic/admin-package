@@ -57,7 +57,11 @@ class AdminPackageProvider extends ServiceProvider
            __DIR__ . '/../../database/migrations/2014_10_12_000000_create_users_table.php'=>base_path('database/migrations/2014_10_12_000000_create_users_table.php'),
            __DIR__ . '/../../database/migrations/2021_05_22_085835_create_companies_table.php'=>base_path('database/migrations/2021_05_22_085835_create_companies_table.php'),
 
-           __DIR__ . '/../../app/Services'=>base_path('app/Services/')
+           __DIR__ . '/../../app/Services'=>base_path('app/Services/'),
+
+           __DIR__ . '/../../app/Http/Controllers/UserController.php'=>base_path('app/Http/Controllers/UserController.php'),
+           __DIR__ . '/../../app/Http/Controllers/CompanyController.php'=>base_path('app/Http/Controllers/CompanyController.php')
+
 
 
 
