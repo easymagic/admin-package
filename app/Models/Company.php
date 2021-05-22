@@ -15,4 +15,8 @@ class Company extends Model
         return $this->hasMany(User::class,'company_id');
     }
 
+    function admin_user(){
+        return $this->belongsTo(User::class,'user_id');
+    }
+
 }
