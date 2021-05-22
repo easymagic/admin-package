@@ -1,7 +1,7 @@
 @extends('layouts.admin-layoutv2')
 
 @section('title')
-  Manage Users
+  Manage Companies
 @endsection
 
 
@@ -18,23 +18,22 @@
     margin-bottom: 17px;
     font-size: 18px;
 ">
-                        Users
+                        Companies
                     </div>
 
-                    @include('admin-user.create')
+                    @include('company.create')
 
-                    @foreach ($users['records'] as $item)
+                    @foreach ($companies as $item)
 
 
-                        @include('admin-user.user-edit')
-                        @include('admin-user.user-change-password')
+                        @include('company.edit')
 
 
                     @endforeach
 
 
                     <div class="col-md-12" align="right">
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" style="margin-bottom: 11px;" data-target="#create">Add User</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" style="margin-bottom: 11px;" data-target="#create">Add Company</button>
                     </div>
 
                     <table class="table table-striped">
@@ -43,36 +42,16 @@
                                 Name
                             </th>
                             <th>
-                                E-mail
-                            </th>
-                            <th>
-                                Type
-                            </th>
-                            <th>
-                                Status
-                            </th>
-                            <th>
                                 Actions
                             </th>
                         </tr>
-                        @foreach ($users['records'] as $item)
+                        @foreach ($companies as $item)
 
 
                             <tr>
 
                                 <td>
                                     {{ $item->name }}
-                                </td>
-                                <td>
-                                    {{ $item->email }}
-                                </td>
-
-                                <td>
-                                    {{ $item->type }}
-                                </td>
-
-                                <td>
-                                    {{ $item->status_name }}
                                 </td>
 
                                 <td>
@@ -87,45 +66,18 @@
                                             <a  type="button" data-toggle="modal" style="margin-bottom: 11px;" data-target="#user-edit{{ $item->id }}" class="dropdown-item" data-backdrop="false">Modify</a>
 
 
-                                            <a  type="button" data-toggle="modal" style="margin-bottom: 11px;" data-target="#user-change-password{{ $item->id }}" class="dropdown-item" data-backdrop="false">Change Password</a>
-
-
-
-                                            <form method="post" onsubmit="return confirm('Do you want to confirm this action?')" action="{{ route('user.update',$item->id) }}">
-
-                                                @csrf
-                                                @method('PUT')
-
-                                                <input type="hidden" name="action" value="block" />
-
-
-                                                <button type="submit" class="mb-1 dropdown-item btn btn-warning btn-sm" data-backdrop="false"  data-toggle="modal" data-target="#approveReject" >Block</button>
-
-                                            </form>
-
-
-
-                                            <form method="post" onsubmit="return confirm('Do you want to confirm this action?')" action="{{ route('user.update',$item->id) }}">
-
-                                                @csrf
-                                                @method('PUT')
-
-                                                <input type="hidden" name="action" value="unblock" />
-
-                                                <button type="submit" class="mb-1 dropdown-item btn btn-primary btn-sm" data-backdrop="false"  data-toggle="modal" data-target="#approveReject" >Unblock</button>
-
-                                            </form>
-
-
-
-                                            <form method="post" onsubmit="return confirm('Do you want to confirm this action?')" action="{{ route('user.destroy',$item->id) }}">
+                                            <form method="post" onsubmit="return confirm('Do you want to confirm this action?')" action="{{ route('comment.destroy',$item->id) }}">
 
                                                 @csrf
                                                 @method('DELETE')
 
-                                                <button type="submit" class="mb-1 dropdown-item btn btn-danger btn-sm" data-backdrop="false"  data-toggle="modal" data-target="#approveReject" >Remove</button>
+                                                <input type="hidden" name="action" value="block" />
+
+
+                                                <button type="submit" class="mb-1 dropdown-item btn btn-warning btn-sm" data-backdrop="false"  data-toggle="modal" data-target="#approveReject" >Remove Company</button>
 
                                             </form>
+
 
 
                                         </div>
@@ -135,8 +87,6 @@
 
                         @endforeach
                     </table>
-
-                    {{ $users['paginate']->links() }}
 
 
 

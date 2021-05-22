@@ -60,5 +60,5 @@ class CompanyController extends Controller
         //
         return $this->resolveResponse(CompanyService::delete($id));
     }
-    
+
 }

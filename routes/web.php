@@ -27,3 +27,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('user',\App\Http\Controllers\UserController::class)->middleware(['auth']);
 
 Route::get('dashboard',[\App\Http\Controllers\UserController::class,'dashboard'])->name('dashboard')->middleware(['auth']);
+
+Route::resource('company',\App\Http\Controllers\CompanyController::class)->middleware(['auth']);
