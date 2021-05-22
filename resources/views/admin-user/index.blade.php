@@ -63,6 +63,9 @@
                                 Type
                             </th>
                             <th>
+                                Company
+                            </th>
+                            <th>
                                 Status
                             </th>
                             <th>
@@ -83,6 +86,10 @@
 
                                 <td>
                                     {{ $item->type }}
+                                </td>
+
+                                <td>
+                                    {{ $item->company->name }}
                                 </td>
 
                                 <td>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Services\CompanyService;
 use App\Services\UserService;
 use App\Traits\ResponseTraitV2;
 use Illuminate\Http\Request;
@@ -18,10 +19,15 @@ class UserController extends Controller
         $this->data['users'] = UserService::fetch(20);
     }
 
+    function loadCompanies(){
+       $this->data['companies'] = CompanyService::fetch()->get();
+    }
+
     public function index()
     {
         //
         $this->loadUsers();
+        $this->loadCompanies();
         return view('admin-user.index',$this->data);
     }
 
@@ -122,6 +128,7 @@ class UserController extends Controller
         $this->data['staff_count'] = UserService::fetchStaffs()->count();
         $this->data['admin_count'] = UserService::fetchAdmin()->count();
         $this->data['blocked_count'] = UserService::fetchBlocked()->count();
+        $this->data['company_count'] = CompanyService::fetch()->count();
 
     }
 

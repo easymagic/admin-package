@@ -60,6 +60,22 @@
 
                 <div class="form-group row">
 
+                    <label class="col-sm-12 col-form-label text-md-left">{{ __('Company') }}</label>
+
+                    <div class="col-md-12">
+                        <select name="company_id" class="form-control" id="">
+                            <option value="">--Select--</option>
+                            @foreach ($companies as $company)
+                             <option value="{{ $company->id }}">{{ $company->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group row">
+
                     <label class="col-sm-12 col-form-label text-md-left">{{ __('Password') }}</label>
 
                     <div class="col-md-12">

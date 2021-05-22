@@ -63,10 +63,10 @@
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(-5px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
 
 
-                                            <a  type="button" data-toggle="modal" style="margin-bottom: 11px;" data-target="#user-edit{{ $item->id }}" class="dropdown-item" data-backdrop="false">Modify</a>
+                                            <a  type="button" data-toggle="modal" style="margin-bottom: 11px;" data-target="#edit{{ $item->id }}" class="dropdown-item" data-backdrop="false">Modify</a>
 
 
-                                            <form method="post" onsubmit="return confirm('Do you want to confirm this action?')" action="{{ route('comment.destroy',$item->id) }}">
+                                            <form method="post" onsubmit="return confirm('Do you want to confirm this action?')" action="{{ route('company.destroy',$item->id) }}">
 
                                                 @csrf
                                                 @method('DELETE')

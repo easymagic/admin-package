@@ -1,5 +1,5 @@
 <!-- Modal -->
-<form method="POST" action="{{ route('company.update',[$itme->id]) }}">
+<form method="POST" action="{{ route('company.update',[$item->id]) }}">
     <div id="edit{{ $item->id }}" class="modal fade" role="dialog">
         <div class="modal-dialog">
 

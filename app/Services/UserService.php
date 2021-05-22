@@ -83,6 +83,7 @@ class UserService
             'email'=>'required|email|unique:users',
             'password'=>'confirmed',
             'type'=>'required',
+            'company_id'=>'required'
 //            'company_id'=>'required'
         ]);
         //|exists:users,email
@@ -116,7 +117,8 @@ class UserService
     static function updateUserProfile($id){
         $data = request()->validate([
             'name'=>'required',
-            'type'=>'required'
+            'type'=>'required',
+            'company_id'=>'required'
         ]);
 
         $record = self::getById($id)->first();
