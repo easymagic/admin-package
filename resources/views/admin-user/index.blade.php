@@ -21,6 +21,20 @@
                         Users
                     </div>
 
+
+                    <div class="col-md-12">
+
+                        <select name="" id="user-type-filter">
+                            <option value="">All Users</option>
+                            <option {{ request()->filled('type') && request('type') == 'admin'? 'selected':'' }}  value="admin">Admin</option>
+                            <option {{ request()->filled('type') && request('type') == 'staff'? 'selected':'' }} value="staff">Staff</option>
+                            <option {{ request()->filled('type') && request('type') == 'blocked'? 'selected':'' }} value="blocked">Blocked</option>
+                        </select>
+
+                    </div>
+
+
+
                     @include('admin-user.create')
 
                     @foreach ($users['records'] as $item)
@@ -148,6 +162,22 @@
 
 
     </div>
+
+@endsection
+@section('script')
+
+    <script>
+
+
+        // alert('loaded');
+
+        $('#user-type-filter').on('change',function(){
+
+            location.href = `{{ route('user.index') }}?type=${$(this).val()}`;
+
+        });
+
+    </script>
 
 @endsection
 

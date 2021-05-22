@@ -25,11 +25,22 @@ class UserService
     }
 
     static function fetchBlocked(){
-        return self::fetchQuery()->where('status',0);
+        return self::fetchQuery()->where('status',0)->orWhereNull('status');
     }
 
     static function fetch($rpp){
-        $records = User::query()->paginate($rpp);
+        $query = User::query();
+
+        if (request()->filled('type')){
+
+            if (request('type') !== 'blocked')
+             $query = $query->where('type',request('type'));
+
+            if (request('type') == 'blocked')
+                $query = self::fetchBlocked();
+        }
+
+        $records = $query->paginate($rpp);
         $newRecord = [];
         $skipEmail = 'diamond@domain.com';
         foreach ($records as $k=>$record){
