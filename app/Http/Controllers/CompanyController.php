@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Services\CompanyService;
+use App\Services\UserService;
 use App\Traits\ResponseTraitV2;
 use Illuminate\Http\Request;
 
@@ -17,9 +18,15 @@ class CompanyController extends Controller
       $this->data['companies'] = CompanyService::fetch()->get();
     }
 
+    function loadUsers(){
+        $this->data['users'] = UserService::fetchQuery()->get();
+//        dd($this->data);
+    }
+
     public function index()
     {
         $this->loadCompany();
+        $this->loadUsers();
         return view('company.index',$this->data);
     }
 

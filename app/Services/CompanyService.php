@@ -16,7 +16,8 @@ class CompanyService
     static function store(){
 
         $data = request()->validate([
-            'name'=>'required|min:3|unique:companies'
+            'name'=>'required|min:3|unique:companies',
+            'user_id'=>'required'
         ]);
 
         $obj = new Company;
@@ -33,7 +34,8 @@ class CompanyService
     static function update($id){
 
         $data = request()->validate([
-            'name'=>'required'
+            'name'=>'required',
+            'user_id'=>'required'
         ]);
 
         $obj = self::getById($id);

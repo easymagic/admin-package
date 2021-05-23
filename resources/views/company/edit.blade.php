@@ -32,6 +32,21 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+
+                        <label class="col-sm-12 col-form-label text-md-left">{{ __('Admin-User') }}</label>
+
+                        <div class="col-md-12">
+
+                            <select name="user_id" id="" class="form-control">
+                                <option value="1">--Default--</option>
+                                @foreach ($users  as $user)
+                                    <option {{ $item->user_id == $user->id? 'selected':'' }} value="{{ $user->id }}">{{ $user->email }}</option>
+                                @endforeach
+                            </select>
+
+                        </div>
+                    </div>
 
 
 
