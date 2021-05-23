@@ -19,7 +19,7 @@ Auth::routes();
 Route::get('/', function () {
 //    return view('welcome');
     return redirect()->route('login');
-});
+})->name('root');
 
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -33,3 +33,5 @@ Route::resource('user',\App\Http\Controllers\UserController::class)->middleware(
 Route::get('dashboard',[\App\Http\Controllers\UserController::class,'dashboard'])->name('dashboard')->middleware(['auth']);
 
 Route::resource('company',\App\Http\Controllers\CompanyController::class)->middleware(['auth']);
+
+

@@ -5,6 +5,7 @@ namespace App\Services;
 
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use phpDocumentor\Reflection\Types\Collection;
 
@@ -136,7 +137,7 @@ class UserService
 
         $data = request()->validate([
             'old_password'=>'required',
-            'password'=>'confirmed'
+            'password'=>'confirmed|min:5'
         ]);
 
 //        dd($data);
@@ -229,6 +230,15 @@ class UserService
             ]);
 
         }
+    }
+
+
+    static function logout(){
+        Auth::logout();
+        return redirect()->route('login')->with([
+            'message'=>'Just logged out',
+            'error'=>false
+        ]);
     }
 
 

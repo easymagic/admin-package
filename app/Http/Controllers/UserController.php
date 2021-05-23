@@ -107,6 +107,12 @@ class UserController extends Controller
 
         }
 
+        if ($action == 'logout'){
+
+            return UserService::logout();
+
+        }
+
 
 
 
