@@ -22,7 +22,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home',function(){
+    return redirect()->route('dashboard');
+})->name('home')->middleware(['auth']);
 
 Route::resource('user',\App\Http\Controllers\UserController::class)->middleware(['auth']);
 

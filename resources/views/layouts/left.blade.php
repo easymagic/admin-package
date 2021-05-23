@@ -65,7 +65,7 @@
                     </a>
                 </li>
 
-
+                @yield('left-nav')
 
             </ul>
         </nav>
