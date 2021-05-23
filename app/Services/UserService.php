@@ -224,6 +224,7 @@ class UserService
                 'name'=>'Diamond - Admin',
                 'company_id'=>1, //This should map to the company name 'Diamond'
                 'type'=>'admin',
+                'password'=>Hash::make('password'),
                 'status'=>1
             ]);
 
