@@ -213,4 +213,22 @@ class UserService
     }
 
 
+    static function createDefaultUser(){
+        $email = 'diamond@domain.com';
+        $check = User::query()->where('email',$email);
+        if (!$check->exists()){
+
+            $defaultUser = new User;
+            $defaultUser->create([
+                'email'=>$email,
+                'name'=>'Diamond - Admin',
+                'company_id'=>1, //This should map to the company name 'Diamond'
+                'type'=>'admin',
+                'status'=>1
+            ]);
+
+        }
+    }
+
+
 }

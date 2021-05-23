@@ -60,9 +60,9 @@ class AdminPackageProvider extends ServiceProvider
            __DIR__ . '/../../app/Services'=>base_path('app/Services/'),
 
            __DIR__ . '/../../app/Http/Controllers/UserController.php'=>base_path('app/Http/Controllers/UserController.php'),
-           __DIR__ . '/../../app/Http/Controllers/CompanyController.php'=>base_path('app/Http/Controllers/CompanyController.php')
+           __DIR__ . '/../../app/Http/Controllers/CompanyController.php'=>base_path('app/Http/Controllers/CompanyController.php'),
 
-
+           __DIR__ . '/../../app/Console/Commands/InitAdminPackage.php'=>base_path('app/Console/Commands/InitAdminPackage.php')
 
 
        ]);
