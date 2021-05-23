@@ -59,7 +59,7 @@
                                 <td>
                                     {{ $item->admin_user->name }}
                                 </td>
-                                
+
                                 <td>
                                     <div class="dropdown show">
                                         <button class="btn btn-success dropdown-toggle btn-sm pull-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

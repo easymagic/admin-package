@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="06d15d99-88a8-4ef4-a627-42ac3f71fe39" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/CompanyService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CompanyService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/company/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/company/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/company/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +178,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620462360860</updated>
       <workItem from="1620462365043" duration="6622000" />
-      <workItem from="1620491279669" duration="25312000" />
+      <workItem from="1620491279669" duration="25896000" />
     </task>
     <servers />
   </component>
