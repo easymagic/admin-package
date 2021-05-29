@@ -12,6 +12,8 @@
             <a href="{{ route('home') }}" class="nav-link">Home</a>
         </li>
 
+        @yield('top-menu')
+
     </ul>
 
 

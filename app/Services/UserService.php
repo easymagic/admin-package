@@ -214,6 +214,27 @@ class UserService
     }
 
 
+    /*
+     *
+     * roles
+     * id
+     * name
+     *
+     * permissions
+     * id
+     * role_id
+     * permission_name
+     * permission_constant
+     *
+     *
+     * user_roles
+     * id
+     * user_id
+     * role_id
+     *
+     */
+
+
     static function createDefaultUser(){
         $email = 'diamond@domain.com';
         $check = User::query()->where('email',$email);
