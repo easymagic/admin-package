@@ -16,6 +16,7 @@ class UserController extends Controller
     private $data = [];
 
     function loadUsers(){
+
         $this->data['users'] = UserService::fetch(20);
     }
 
@@ -23,9 +24,14 @@ class UserController extends Controller
        $this->data['companies'] = CompanyService::fetch()->get();
     }
 
+    function test2($a=23){
+
+    }
+
     public function index()
     {
         //
+        // $this->test2(1);
         $this->loadUsers();
         $this->loadCompanies();
         return view('admin-user.index',$this->data);

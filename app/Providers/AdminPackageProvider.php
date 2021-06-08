@@ -32,6 +32,10 @@ class AdminPackageProvider extends ServiceProvider
            ///models and resources
            __DIR__ . '/../../resources/views/layouts'=>base_path('resources/views/layouts'),
 
+           __DIR__ . '/../../resources/views/response-message.blade.php'=>base_path('resources/views/response-message.blade.php'),
+
+           __DIR__ . '/../../resources/views/js_cdns'=>base_path('resources/views/js_cdns'),
+
            __DIR__ . '/../../resources/views/auth'=>base_path('resources/views/auth'),
 
            __DIR__ . '/../../resources/views/admin-user'=>base_path('resources/views/admin-user'),
